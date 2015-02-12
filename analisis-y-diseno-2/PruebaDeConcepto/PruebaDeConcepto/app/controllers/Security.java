@@ -21,8 +21,6 @@ public class Security extends Controller {
 		
 		List<Usuario> usuarios = Usuario.find("email = ? and password=?",email,password).fetch();
 		
-		Usuarios esto deberia fallar
-		
 		if (usuarios.isEmpty()) {
 			System.out.println("ERRROR");
 			login();
