@@ -10,9 +10,7 @@ import models.*;
 public class Application extends Controller {
 
     public static void index() {
-    	String nombre = session.get("nombre") == null 
-    					? "vacio" 
-    					: session.get("nombre");
+    	String nombre = session.get("nombre");
         render(nombre);
     }
 

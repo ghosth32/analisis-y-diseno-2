@@ -19,20 +19,19 @@
 		
 			<!-- Codrops top bar -->
             <div class="codrops-top">
+            	<a href="/Security/registro">Registro</a>
                 <span class="right">
-                	<a href="http://www.flickr.com/photos/hisgett/369087090/sizes/m/in/photostream/">Registro</a>
+                	
 
                 	#{if nombre}
-                		<a href="/Security/login">
-	                        <strong>Bienvenido/a: ${nombre}</strong>
-	                    </a>
+	                    <a>Bienvenido/a: <strong>${nombre}</strong></a>
+	                    <a href="/Security/closeSession">X</a>	
                 	#{/if}
                 	#{else}
 	                	<a href="/Security/login">
-	                        <strong>Inicio de Sesión</strong>
+	                        <strong>Inicia de sesión</strong>
 	                    </a>
                 	#{/else}
-                    
                 </span>
             </div><!--/ Codrops top bar -->
 			

@@ -20,7 +20,7 @@
 			<!-- Codrops top bar -->
             <div class="codrops-top">
                 <span class="right">
-                	<a href="/Security/registro">Registrarme</a>
+                	<a href="/Security/login">Inicia sesión</a>
                     <a href="/">
                         <strong>Menú</strong>
                     </a>
@@ -52,21 +52,53 @@
 
 									<div class="rm-logo"></div>
 									<h2>Pizzas Gourmet</h2>
-									<h3>Inicia Sesión</h3>
+									<h3>Crea tu cuenta</h3>
 
-									<form action="/Security/authenticate">
+									<form action="/Security/createAccount">
 										<table>
 											<tr>
-												<td>correo:</td>
-												<td><input name="email" type="text"> </td>
+												<td>Nombre:</td>
+												<td><input name="nombre" type="text"></td>
 											</tr>
 											<tr>
 												<td><br></td>
 												<td><br></td>
 											</tr>
 											<tr>
-												<td>password</td>
+												<td>Correo:</td>
+												<td><input name="correo" type="text"> </td>
+											</tr>
+											<tr>
+												<td><br></td>
+												<td><br></td>
+											</tr>
+											<tr>
+												<td>Celular:</td>
+												<td><input name="celular" type="text"> </td>
+											</tr>
+											<tr>
+												<td><br></td>
+												<td><br></td>
+											</tr>
+											<tr>
+												<td>Dirección:</td>
+												<td><input name="direccion" type="text"> </td>
+											</tr>
+											<tr>
+												<td><br></td>
+												<td><br></td>
+											</tr>
+											<tr>
+												<td>Contraseña:</td>
 												<td><input name="password" type="password"></td>
+											</tr>
+											<tr>
+												<td><br></td>
+												<td><br></td>
+											</tr>
+											<tr>
+												<td>Confirmar contraseña:</td>
+												<td><input name="passwordConfirm" type="password"></td>
 											</tr>
 											<tr>
 												<td><br></td>
@@ -78,7 +110,7 @@
 											</tr>
 										</table>							
 									</form>
-
+									<p style="color:red">${flash.error}</p>
 								</div><!-- /rm-content -->
 							</div><!-- /rm-front -->
 
