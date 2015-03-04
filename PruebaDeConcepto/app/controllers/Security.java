@@ -22,15 +22,12 @@ public class Security extends Controller {
 	
 	public static void authenticate(String email, String password) {
 		
-		System.out.println(email);
-		System.out.println(password);
-		
 		session.put("nombre", email);	
 		
 		List<Usuario> usuarios = Usuario.find("email = ? and password=?",email,password).fetch();
 		
 		if (usuarios.isEmpty()) {
-			System.out.println("ERRROR");
+			flash.put("error", "Credenciales invalidas");
 			login();
 		} else {
 			Application.index();
@@ -53,13 +50,14 @@ public class Security extends Controller {
 				usuario.direccion = direccion;
 				usuario.password = password;
 				usuario.save();
+				
+				flash.put("success", "Usuario creado con éxito");
+				Application.index();
 			} else {
 				flash.put ("error", "El password no coincide");
+				registro(); //returning to the page
 			}
 		}
-		
-		flash.keep();
-		registro(); //returning to the page
 	}
 	
 	private static boolean checkRequired(String name, String email, String phone, String address, String password, String passwordConfirm) {

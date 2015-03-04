@@ -66,7 +66,7 @@
 											</tr>
 											<tr>
 												<td>Correo:</td>
-												<td><input name="correo" type="text"> </td>
+												<td><input name="correo" type="email"> </td>
 											</tr>
 											<tr>
 												<td><br></td>
@@ -74,7 +74,7 @@
 											</tr>
 											<tr>
 												<td>Celular:</td>
-												<td><input name="celular" type="text"> </td>
+												<td><input name="celular" type="number" min="8"> </td>
 											</tr>
 											<tr>
 												<td><br></td>
@@ -111,6 +111,7 @@
 										</table>							
 									</form>
 									<p style="color:red">${flash.error}</p>
+									<p style="color:blue">${flash.success}</p>
 								</div><!-- /rm-content -->
 							</div><!-- /rm-front -->
 
