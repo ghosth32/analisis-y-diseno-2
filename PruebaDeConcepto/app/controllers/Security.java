@@ -40,7 +40,6 @@ public class Security extends Controller {
 		if (checkRequired(nombre, correo, celular, direccion, password, passwordConfirm)) {
 			flash.put("error", "Todos los parametros son requeridos");
 		} else {
-			System.out.println("Todos los parametros son correctos");
 			
 			if (password.equals(passwordConfirm)) {
 				Usuario usuario = new Usuario();
