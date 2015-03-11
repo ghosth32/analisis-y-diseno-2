@@ -24,10 +24,6 @@ public class Security extends Controller {
 		
 		session.put("nombre", email);	
 		
-		int a = 0;
-		
-		String Hola_MUNDO;
-		
 		List<Usuario> usuarios = Usuario.find("email = ? and password=?",email,password).fetch();
 		
 		if (usuarios.isEmpty()) {
@@ -37,6 +33,30 @@ public class Security extends Controller {
 			Application.index();
 		}
 		
+	}
+	
+public static void createAccount(String nombre, String correo, String celular, String direccion, String password, String passwordConfirm) {
+		
+		if (checkRequired(nombre, correo, celular, direccion, password, passwordConfirm)) {
+			flash.put("error", "Todos los parametros son requeridos");
+		} else {
+			
+			if (password.equals(passwordConfirm)) {
+				Usuario usuario = new Usuario();
+				usuario.nombre = nombre;
+				usuario.email = correo;
+				usuario.celular = celular;
+				usuario.direccion = direccion;
+				usuario.password = password;
+				usuario.save();
+				
+				flash.put("success", "Usuario creado con éxito");
+				Application.index();
+			} else {
+				flash.put ("error", "El password no coincide");
+				registro(); //returning to the page
+			}
+		}
 	}
 	
 	private static boolean checkRequired(String name, String email, String phone, String address, String password, String passwordConfirm) {
