@@ -24,6 +24,10 @@ public class Security extends Controller {
 		
 		session.put("nombre", email);	
 		
+		int a = 0;
+		
+		String Hola_MUNDO;
+		
 		List<Usuario> usuarios = Usuario.find("email = ? and password=?",email,password).fetch();
 		
 		if (usuarios.isEmpty()) {
