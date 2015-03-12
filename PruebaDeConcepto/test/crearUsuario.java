@@ -14,6 +14,6 @@ public class crearUsuario extends UnitTest {
 	    
 	    // Test 
 	    assertNotNull(irwin);
-	    assertEquals("Irwin", irwin.nombre);
+	    assertEquals("Irwin", irwin.getNombre());
 	}
 }

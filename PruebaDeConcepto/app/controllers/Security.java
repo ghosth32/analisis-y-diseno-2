@@ -43,14 +43,14 @@ public static void createAccount(String nombre, String correo, String celular, S
 			
 			if (password.equals(passwordConfirm)) {
 				Usuario usuario = new Usuario();
-				usuario.nombre = nombre;
-				usuario.email = correo;
-				usuario.celular = celular;
-				usuario.direccion = direccion;
-				usuario.password = password;
+				usuario.setNombre(nombre);
+				usuario.setEmail(correo);
+				usuario.setCelular(celular);
+				usuario.setDireccion(direccion);
+				usuario.setPassword(password);
 				usuario.save();
 				
-				flash.put("success", "Usuario creado con éxito");
+				flash.put("success", "Usuario creado con ï¿½xito");
 				Application.index();
 			} else {
 				flash.put ("error", "El password no coincide");
